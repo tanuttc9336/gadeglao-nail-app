@@ -3,6 +3,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ShopSections from "./components/ShopSections";
 
 /** ---------- Dictionaries (พื้นฐานเดิม) ---------- */
 const dayColors: Record<number, string> = {
@@ -1401,6 +1402,9 @@ const nailsStyles = useMemo(()=>{
           </div>
         </section>
       </HeroCanvas>
+
+      {/* ── ส่วนร้าน: เมนูราคา · มาตรฐาน · จองคิว (รวมจาก shop.html) ── */}
+      <ShopSections />
     </div>
   );
 }
