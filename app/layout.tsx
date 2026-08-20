@@ -1,10 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { Kanit, Noto_Sans_Thai } from "next/font/google";
-
-const kanit = Kanit({ subsets: ["latin", "thai"], weight: ["600", "700"] });
-const noto = Noto_Sans_Thai({ subsets: ["thai"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
   title: "GadeGlao — เล็บเสริมดวง",
@@ -14,9 +10,23 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="th">
-      <body className={`${noto.className} bg-gradient-to-br from-[#F8FAFF] to-[#FFF7FB] text-[#3a2e39]`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Kanit:wght@600;700&family=Noto+Sans+Thai:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body
+        className="bg-gradient-to-br from-[#F8FAFF] to-[#FFF7FB] text-[#3a2e39]"
+        style={{ fontFamily: "'Noto Sans Thai', sans-serif" }}
+      >
         <header className="w-full py-5 flex items-center justify-center">
-          <div className={`text-xl font-bold bg-gradient-to-r from-[#FF8FB1] to-[#B79EE8] text-transparent bg-clip-text ${kanit.className}`}>
+          <div
+            className="text-xl font-bold bg-gradient-to-r from-[#FF8FB1] to-[#B79EE8] text-transparent bg-clip-text"
+            style={{ fontFamily: "'Kanit', sans-serif" }}
+          >
             GadeGlao • เล็บเสริมดวง
           </div>
         </header>
